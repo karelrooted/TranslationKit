@@ -10,11 +10,14 @@ import Foundation
 public enum TranslateProvider: String {
     case google
     case baidu
+    case googleWeb
 
     var backend: any TranslateBackend {
         switch self {
         case .google:
             GoogleTranslate.shared
+        case .googleWeb:
+            GoogleWebTranslate.shared
         case .baidu:
             BaiduTranslate.shared
         }
